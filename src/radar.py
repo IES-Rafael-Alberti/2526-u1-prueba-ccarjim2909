@@ -54,32 +54,31 @@ def procesar_linea(linea: str) -> str:
     3) Devolver el texto pedido.
     """
     # --- Implementación del alumnado aquí ---
-    numero1 = sys.argv[2]
-    numero2 = sys.argv[3]
-    numero3 = sys.argv[4]
+    prueba = leer_casos("./test/test_radar.py")
+
+    numero1 = prueba[0]
+    numero2 = prueba[1]
+    numero3 = prueba[2]
+
 
     distancia_m = int(numero1)
     vmax_kmh = int(numero2)
     tiempo_s = int(numero3)
 
     if distancia_m < 0 or vmax_kmh < 0 or tiempo_s < 0:
-        resultado = ("ERROR")
-        return resultado
+        return "ERROR"
     else:
         tiempo_m = tiempo_s / 60
         tiempo_h = tiempo_m / 60
-        distancia_km = round(distancia_m / 100)
+        distancia_km = round(distancia_m / 1000)
         vmedia = distancia_km / tiempo_h
 
         if vmedia <= vmax_kmh:
-            resultado = "OK"
-            return resultado
+            return "OK"
         elif vmedia > (vmax_kmh * 1.2):
-            resultado = "MULTA"
-            return resultado
+            return "MULTA"
         else:
-            resultado = "PUNTOS"
-            return resultado
+            return "PUNTOS"
 
      #raise NotImplementedError("Función aún no implementada por el alumnado.")
 

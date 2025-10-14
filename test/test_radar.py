@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from solucion import procesar_linea
+from src.radar import procesar_linea
 
 @pytest.mark.parametrize(
     "linea, esperado",
@@ -29,4 +29,4 @@ from solucion import procesar_linea
 
 # Debes darle contenido a la siguiente función
 def test_procesar_linea(linea, esperado):
-   
+   print(procesar_linea)
