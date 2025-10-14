@@ -54,6 +54,30 @@ def procesar_linea(linea: str) -> str:
     3) Devolver el texto pedido.
     """
     # --- Implementación del alumnado aquí ---
+	numero1 = sys.argv[1]
+	numero2 = sys.argv[2]
+	numero3 = sys.argv[3]
+		if numero1 < 0 or numero2 < 0 or nuemro3 < 0:
+			print ("ERROR")
+		else:
+			distancia_m = int(round(numero1 / 100))
+			vmax_kmh = int(numero2)
+			tiempo_s = int(numero3)
+
+			tiempo_m = tiempo_s / 60
+			tiempo_h = tiempo_m / 60
+			vmedia = 
+
+			if vmedia <= vmax_kmh:
+				print ("OK")
+			elif vmedia - 20%:
+				print ("MULTA")
+			else:
+				print ("PUNTOS")
+
+
+
+
     raise NotImplementedError("Función aún no implementada por el alumnado.")
 
 # a main se llama de la siguiente forma  main(sys.argv)
