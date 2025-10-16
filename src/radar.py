@@ -54,7 +54,36 @@ def procesar_linea(linea: str) -> str:
     3) Devolver el texto pedido.
     """
     # --- Implementación del alumnado aquí ---
-    raise NotImplementedError("Función aún no implementada por el alumnado.")
+    partes = linea.split()
+
+    numero1 = partes[0]
+    numero2 = partes[1]
+    numero3 = partes[2]
+
+    if not (numero1.isdigit() and numero2.isdigit() and numero3.isdigit()):
+        return "ERROR"
+
+
+    distancia_m = int(numero1)
+    vmax_kmh = int(numero2)
+    tiempo_s = int(numero3)
+
+    if distancia_m < 0 or vmax_kmh < 0 or tiempo_s < 0:
+        return "ERROR"
+    else:
+        tiempo_m = tiempo_s / 60
+        tiempo_h = tiempo_m / 60
+        distancia_km = round(distancia_m / 1000)
+        vmedia = distancia_km / tiempo_h
+
+        if vmedia <= vmax_kmh:
+            return "OK"
+        elif vmedia > (vmax_kmh * 1.2):
+            return "MULTA"
+        else:
+            return "PUNTOS"
+
+     #raise NotImplementedError("Función aún no implementada por el alumnado.")
 
 # a main se llama de la siguiente forma  main(sys.argv)
 def main(argv: List[str]) -> None:
