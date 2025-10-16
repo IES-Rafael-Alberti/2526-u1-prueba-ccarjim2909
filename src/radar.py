@@ -54,11 +54,14 @@ def procesar_linea(linea: str) -> str:
     3) Devolver el texto pedido.
     """
     # --- Implementación del alumnado aquí ---
-    prueba = leer_casos("./test/test_radar.py")
+    partes = linea.split()
 
-    numero1 = prueba[0]
-    numero2 = prueba[1]
-    numero3 = prueba[2]
+    numero1 = partes[0]
+    numero2 = partes[1]
+    numero3 = partes[2]
+
+    if not (numero1.isdigit() and numero2.isdigit() and numero3.isdigit()):
+        return "ERROR"
 
 
     distancia_m = int(numero1)
